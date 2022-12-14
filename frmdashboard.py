@@ -49,9 +49,9 @@ class Dashboard(tk.Toplevel):
         GButton_430["font"] = ft
         GButton_430["fg"] = "#000000"
         GButton_430["justify"] = "center"
-        GButton_430["text"] = "Descuentos"
+        GButton_430["text"] = "Ventas"
         GButton_430.place(x=370,y=40,width=165,height=45)
-        GButton_430["command"] = self.abrir_descuentos
+        GButton_430["command"] = self.abrir_Ventas
 
     def abrir_usuarios(self):
         Users(self)
@@ -59,5 +59,5 @@ class Dashboard(tk.Toplevel):
     def abrir_productos(self):
         print("Productos")
 
-    def abrir_descuentos(self):
-        print("descuentos")
+    def abrir_Ventas(self):
+        print("Ventas")
