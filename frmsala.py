@@ -10,7 +10,7 @@ class Sala(tk.Toplevel):
         self.title("Registro de Productos")
         #setting window size
         width=350
-        height=600
+        height=350
         screenwidth = self.winfo_screenwidth()
         screenheight = self.winfo_screenheight()
         alignstr = '%dx%d+%d+%d' % (width, height, (screenwidth - width) / 2, (screenheight - height) / 2)
@@ -41,6 +41,31 @@ class Sala(tk.Toplevel):
         GLabel_205["text"] = "Stock:"
         GLabel_205.place(x=10,y=90,width=70,height=25)
 
+        GLabel_205=tk.Label(self)
+        ft = tkFont.Font(family='Times',size=10)
+        GLabel_205["font"] = ft
+        GLabel_205["fg"] = "#333333"
+        GLabel_205["justify"] = "left"
+        GLabel_205["text"] = "Tipo:"
+        GLabel_205.place(x=10,y=130,width=70,height=25)
+
+        GLabel_205=tk.Label(self)
+        ft = tkFont.Font(family='Times',size=10)
+        GLabel_205["font"] = ft
+        GLabel_205["fg"] = "#333333"
+        GLabel_205["justify"] = "left"
+        GLabel_205["text"] = "Codigo:"
+        GLabel_205.place(x=10,y=170,width=70,height=25)
+
+        GLabel_205=tk.Label(self)
+        ft = tkFont.Font(family='Times',size=10)
+        GLabel_205["font"] = ft
+        GLabel_205["fg"] = "#333333"
+        GLabel_205["justify"] = "left"
+        GLabel_205["text"] = "Precio:"
+        GLabel_205.place(x=10,y=210,width=70,height=25)
+
+        
         GLineEdit_119=tk.Entry(self, name = "txtProducto")
         GLineEdit_119["borderwidth"] = "1px"
         ft = tkFont.Font(family='Times',size=10)
@@ -67,6 +92,33 @@ class Sala(tk.Toplevel):
         GLineEdit_557["justify"] = "left"
         GLineEdit_557["text"] = ""
         GLineEdit_557.place(x=80,y=90,width=250,height=30)
+
+        GLineEdit_557=tk.Entry(self, name = "txtTipo")
+        GLineEdit_557["borderwidth"] = "1px"
+        ft = tkFont.Font(family='Times',size=10)
+        GLineEdit_557["font"] = ft
+        GLineEdit_557["fg"] = "#333333"
+        GLineEdit_557["justify"] = "left"
+        GLineEdit_557["text"] = ""
+        GLineEdit_557.place(x=80,y=130,width=250,height=30)
+
+        GLineEdit_557=tk.Entry(self, name = "txtCodigo")
+        GLineEdit_557["borderwidth"] = "1px"
+        ft = tkFont.Font(family='Times',size=10)
+        GLineEdit_557["font"] = ft
+        GLineEdit_557["fg"] = "#333333"
+        GLineEdit_557["justify"] = "left"
+        GLineEdit_557["text"] = ""
+        GLineEdit_557.place(x=80,y=170,width=250,height=30)
+
+        GLineEdit_557=tk.Entry(self, name = "txtPrecio")
+        GLineEdit_557["borderwidth"] = "1px"
+        ft = tkFont.Font(family='Times',size=10)
+        GLineEdit_557["font"] = ft
+        GLineEdit_557["fg"] = "#333333"
+        GLineEdit_557["justify"] = "left"
+        GLineEdit_557["text"] = ""
+        GLineEdit_557.place(x=80,y=210,width=250,height=30)
        
         GButton_215=tk.Button(self)
         GButton_215["bg"] = "#f0f0f0"
@@ -75,7 +127,7 @@ class Sala(tk.Toplevel):
         GButton_215["fg"] = "#000000"
         GButton_215["justify"] = "center"
         GButton_215["text"] = "Aceptar"
-        GButton_215.place(x=100,y=140,width=70,height=25)
+        GButton_215.place(x=100,y=310,width=70,height=25)
         GButton_215["command"] = self.aceptar
 
         GButton_901=tk.Button(self)
@@ -85,7 +137,7 @@ class Sala(tk.Toplevel):
         GButton_901["fg"] = "#000000"
         GButton_901["justify"] = "center"
         GButton_901["text"] = "Cancelar"
-        GButton_901.place(x=180,y=140,width=70,height=25)
+        GButton_901.place(x=180,y=310,width=70,height=25)
         GButton_901["command"] = self.cancelar
 
     def aceptar(self):
