@@ -70,7 +70,7 @@ class Login(tk.Toplevel):
         GButton_100["justify"] = "center"
         GButton_100["text"] = "Cancelar"
         GButton_100.place(x=370,y=90,width=70,height=25)
-        GButton_100["command"] = self.cerrar
+        GButton_100["command"] = self.cancelar
 
         GButton_946=tk.Button(self)
         GButton_946["bg"] = "#f0f0f0"
@@ -92,9 +92,17 @@ class Login(tk.Toplevel):
             contrasenia = txtContrasenia.get()
 
             if usuario != "":
-                if user.validar(usuario, contrasenia):
-                    Dashboard(self.master)
-                    self.destroy()
+                if user.validar(usuario, contrasenia):                    
+                    usuario = user.obtener_nombre_usuario(usuario)
+                    if usuario is not None:
+                        if usuario[8] == "Administrador":
+                            Dashboard(self.master)
+                            self.destroy()
+                        elif usuario[8] == "Cliente":
+                            # TODO chequear el rol del usuario para abrir el menu/ventana correspondiente
+                            print("Mostrar pantalla para usuario con rol de Cliente")
+                    else:
+                        tkMsgBox.showerror(self.master.title(), "Se produjo un error al obtener los datos del usuario, reintente nuevamente")
                 else:
                     tkMsgBox.showwarning(self.master.title(), "Usuario/Contraseña incorrecta")
             else:
@@ -102,7 +110,7 @@ class Login(tk.Toplevel):
         except Exception as ex:
             tkMsgBox.showerror(self.master.title(), str(ex))
 
-    def cerrar(self):
+    def cancelar(self):
         self.destroy()
 
     def abrir_user(self):

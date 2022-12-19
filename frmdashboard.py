@@ -1,6 +1,7 @@
 import tkinter as tk
 import tkinter.font as tkFont
 from frmusers import Users
+from frmsala import Sala
 
 class Dashboard(tk.Toplevel):
     def __init__(self, master=None):
@@ -41,7 +42,7 @@ class Dashboard(tk.Toplevel):
         GButton_196["justify"] = "center"
         GButton_196["text"] = "Productos"
         GButton_196.place(x=190,y=40,width=165,height=45)
-        GButton_196["command"] = self.abrir_productos
+        GButton_196["command"] = self.abrir_salas
 
         GButton_430=tk.Button(self)
         GButton_430["bg"] = "#f0f0f0"
@@ -51,13 +52,13 @@ class Dashboard(tk.Toplevel):
         GButton_430["justify"] = "center"
         GButton_430["text"] = "Ventas"
         GButton_430.place(x=370,y=40,width=165,height=45)
-        GButton_430["command"] = self.abrir_Ventas
+        GButton_430["command"] = self.abrir_ventas
 
     def abrir_usuarios(self):
         Users(self)
 
-    def abrir_productos(self):
-        print("Productos")
+    def abrir_salas(self):
+        Sala(self)
 
-    def abrir_Ventas(self):
-        print("Ventas")
+    def abrir_ventas(self):
+        print("ventas")

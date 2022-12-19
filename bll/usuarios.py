@@ -47,3 +47,21 @@ def existe(usuario):
     result = Db.consultar(sql, parametros, False)
     count = int(result[0])
     return count == 1
+
+def obtener_id(id):
+    sql = '''SELECT u.UsuarioId, u.Apellido, u.Nombre, u.FechaNacimiento, u.Dni, u.CorreoElectronico, u.Usuario, u.RolId, r.Nombre Rol
+            FROM Usuarios u
+            INNER JOIN Roles r ON u.RolId = r.RolId
+            WHERE u.UsuarioId = ? AND u.Activo = 1;'''
+    parametros = (id,)
+    result = Db.consultar(sql, parametros, False)    
+    return result
+
+def obtener_nombre_usuario(usuario):
+    sql = '''SELECT u.UsuarioId, u.Apellido, u.Nombre, u.FechaNacimiento, u.Dni, u.CorreoElectronico, u.Usuario, u.RolId, r.Nombre Rol
+            FROM Usuarios u
+            INNER JOIN Roles r ON u.RolId = r.RolId
+            WHERE u.Usuario = ? AND u.Activo = 1;'''
+    parametros = (usuario,)
+    result = Db.consultar(sql, parametros, False)    
+    return result
