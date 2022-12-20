@@ -2,7 +2,7 @@ import tkinter as tk
 import tkinter.font as tkFont
 from frmusers import Users
 from frmsala import Sala
-
+from PRODUCTOS import Producto
 class Dashboard(tk.Toplevel):
     def __init__(self, master=None):
         super().__init__(master)
@@ -54,11 +54,25 @@ class Dashboard(tk.Toplevel):
         GButton_430.place(x=370,y=40,width=165,height=45)
         GButton_430["command"] = self.abrir_ventas
 
+
+        GButton_196=tk.Button(self)
+        GButton_196["bg"] = "#f0f0f0"
+        ft = tkFont.Font(family='Times',size=10)
+        GButton_196["font"] = ft
+        GButton_196["fg"] = "#000000"
+        GButton_196["justify"] = "center"
+        GButton_196["text"] = "Modificaciones"
+        GButton_196.place(x=190,y=130,width=165,height=45)
+        GButton_196["command"] = self.abrir_Producto
+
     def abrir_usuarios(self):
         Users(self)
 
     def abrir_salas(self):
         Sala(self)
+
+    def abrir_Producto(self):
+        Producto(self)
 
     def abrir_ventas(self):
         print("ventas")
